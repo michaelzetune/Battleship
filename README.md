@@ -5,7 +5,7 @@ This fun Java program simulates a full game of Battleship. At the start, each pl
 
 Below is a UML diagram of the classes:
 
-![Diagram not loading](https://github.com/MichaelZetune/Battleship/blob/master/BattleshipUML.pdf)
+![Diagram not loading](https://github.com/MichaelZetune/Battleship/blob/master/BattleshipUML.pdf "UML Diagram")
 
 
 ## Acknowledgements
