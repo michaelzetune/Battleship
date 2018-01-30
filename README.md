@@ -5,9 +5,9 @@ This fun Java program simulates a full game of Battleship. At the start, each pl
 
 Below is a UML diagram of the classes:
 
-<object data="https://github.com/MichaelZetune/Battleship/blob/master/BattleshipUML.pdf" type="application/pdf" width="1200px" height="1200px">
-<embed src="https://github.com/MichaelZetune/Battleship/blob/master/BattleshipUML.pdf">
-This browser does not support PDFs. Please download the PDF to view it: <a href="http://yoursite.com/the.pdf">Download PDF</a>.</p>
+<object data="https://github.com/MichaelZetune/Battleship/raw/master/BattleshipUML.pdf" type="application/pdf" width="1200px" height="1200px">
+<embed src="https://github.com/MichaelZetune/Battleship/raw/master/BattleshipUML.pdf">
+This browser does not support PDFs. Please download the PDF to view it: <a href="https://github.com/MichaelZetune/Battleship/raw/master/BattleshipUML.pdf">Download PDF</a>.</p>
 </embed>
 </object>
 
