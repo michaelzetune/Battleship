@@ -110,7 +110,6 @@ public class OceanGrid
 	   {
 	    if(ocean[x][y] == Location.SHIP)
 	    {
-	    	System.out.println ("1");
 	    	return true;
 	    }
 	     

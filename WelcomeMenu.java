@@ -69,7 +69,6 @@ public class WelcomeMenu implements ActionListener {
 			{
 				frame.dispose();
 
-				//Battleship b = new Battleship();
 				(new Thread() {
 				public void run() {
 				Battleship b = new Battleship();

@@ -135,9 +135,7 @@ public class Battleship extends JFrame implements ActionListener {
     	String[] options = {"Vertical", "Horizontal"};
     	int choice = -1;
     	Ship.ShipType[] ships = {Ship.ShipType.AIRCRAFT_CARRIER, Ship.ShipType.BATTLESHIP, Ship.ShipType.DESTROYER, Ship.ShipType.SUBMARINE, Ship.ShipType.PATROL_BOAT};
-        System.out.print("1");
     	updateAllGrids(1);
-        System.out.println("2");
     	
     	// Player One setup
     	for (int i = 0; i < 5; i ++)
@@ -145,9 +143,8 @@ public class Battleship extends JFrame implements ActionListener {
     		done = false;
     		while (!done)
     		{
-                System.out.println("f");
     			choice = JOptionPane.showOptionDialog(playerOneWindow, "Choose a valid location for your " + ships[i].toString(), "Setup", JOptionPane.PLAIN_MESSAGE, 1, null, options, options[0]);
-    			while (lastSelectedCoordinate.equals(old)) {Thread.sleep(200); System.out.println("c"); }
+    			while (lastSelectedCoordinate.equals(old)) {Thread.sleep(200);}
     			if (playerOneGrid.addShip(choice, new Ship(ships[i]), lastSelectedCoordinate.getX(), lastSelectedCoordinate.getY()))
     			{
     				updateAllGrids(1);
@@ -164,9 +161,8 @@ public class Battleship extends JFrame implements ActionListener {
     		done = false;
     		while (!done)
     		{
-                System.out.println("f");
     			choice = JOptionPane.showOptionDialog(playerTwoWindow, "Choose a valid location for your " + ships[i].toString(), "Setup", JOptionPane.PLAIN_MESSAGE, 1, null, options, options[0]);
-    			while (lastSelectedCoordinate.equals(old)) {Thread.sleep(200); System.out.println("c"); }
+    			while (lastSelectedCoordinate.equals(old)) {Thread.sleep(200);}
     			if (playerTwoGrid.addShip(choice, new Ship(ships[i]), lastSelectedCoordinate.getX(), lastSelectedCoordinate.getY()))
     			{
     				updateAllGrids(2);
@@ -193,7 +189,7 @@ public class Battleship extends JFrame implements ActionListener {
     		{
     			Coord old = lastSelectedCoordinate;
 		    	JOptionPane.showMessageDialog(playerOneWindow, "Choose a valid location to attack on the top grid.");
-		    	while(old.equals(lastSelectedCoordinate)){ Thread.sleep(200); System.out.print("waiting"); }
+		    	while(old.equals(lastSelectedCoordinate)){ Thread.sleep(200); }
 		    	attackSpot = lastSelectedCoordinate;
 		    	temp = playerTwoGrid.attack(attackSpot.getX(), attackSpot.getY());
     		}
@@ -226,7 +222,7 @@ public class Battleship extends JFrame implements ActionListener {
     		{
     			Coord old = lastSelectedCoordinate;
 		    	JOptionPane.showMessageDialog(playerTwoWindow, "Choose a valid location to attack.");
-		    	while(old.equals(lastSelectedCoordinate)){ Thread.sleep(200); System.out.print("waiting"); }
+		    	while(old.equals(lastSelectedCoordinate)){ Thread.sleep(200); }
 		    	attackSpot = lastSelectedCoordinate;
 		    	temp = playerOneGrid.attack(attackSpot.getX(), attackSpot.getY());
     		}
@@ -271,7 +267,6 @@ public class Battleship extends JFrame implements ActionListener {
     		scrollBarPTwo.setVisible(false);
             String text = turnList.toString().substring(1,turnList.toString().length()-1);
             String newText = text.replaceAll("\n, ", "\n");
-            System.out.println("TEXT: \n" + newText);
     		textAreaPOne.setText(newText); 
 
     	}
@@ -285,7 +280,6 @@ public class Battleship extends JFrame implements ActionListener {
     		scrollBarPTwo.setVisible(true);
     		String text = turnList.toString().substring(1,turnList.toString().length()-1);
             String newText = text.replaceAll("\n, ", "\n");
-            System.out.println("TEXT: \n" + newText);
             textAreaPOne.setText(newText); 
     	}
     	if (i == 3) // hide everything
