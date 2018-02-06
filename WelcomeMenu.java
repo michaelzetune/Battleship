@@ -74,12 +74,13 @@ public class WelcomeMenu implements ActionListener {
 			case "Play Game":
 			{
 				frame.dispose();
+
+				//Battleship b = new Battleship();
+				(new Thread() {
+				public void run() {
 				Battleship b = new Battleship();
-				// try
-				// {
-				// 	b.setupGame();
-				// }
-				// catch(InterruptedException a){}
+				}
+				}).start();
 		
 			} break;
 			case "Help": 
