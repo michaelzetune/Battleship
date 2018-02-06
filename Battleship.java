@@ -35,7 +35,7 @@ public class Battleship extends JFrame implements ActionListener {
 	/**
 	 * constructs a Battleship with GUI elements
 	 */
-    public Battleship() throws InterruptedException
+    public Battleship() //throws InterruptedException
     {
 	     playerOneWindow = new JFrame();
 	     playerTwoWindow = new JFrame();
@@ -99,7 +99,7 @@ public class Battleship extends JFrame implements ActionListener {
 	     {
             System.out.println("checking game over");
 	     	updateAllGrids(switcher);
-	     	turn(switcher);
+            try {turn(switcher);} catch (InterruptedException e){};
 	     	if (switcher == 1) switcher = 2;
 	     	else switcher = 1;
 	     }
