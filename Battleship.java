@@ -151,23 +151,15 @@ public class Battleship extends JFrame implements ActionListener {
     		done = false;
     		while (!done)
     		{
-                System.out.println("a");
-    			TimeUnit.SECONDS.sleep(3);
-                choice = JOptionPane.showOptionDialog(playerOneWindow, "Choose a valid location for your " + ships[0].toString(), "Setup", JOptionPane.PLAIN_MESSAGE, 1, null, options, options[0]);
-    			System.out.println(lastSelectedCoordinate.equals(old));
-                
-                readyToContinueSetup = false;
-                while(!readyToContinueSetup) {
-                    // wait
-                }
-
-                if (playerOneGrid.addShip(choice, new Ship(ships[0]), lastSelectedCoordinate.getX(), lastSelectedCoordinate.getY()))
+                System.out.println("f");
+    			choice = JOptionPane.showOptionDialog(playerOneWindow, "Choose a valid location for your " + ships[i].toString(), "Setup", JOptionPane.PLAIN_MESSAGE, 1, null, options, options[0]);
+    			while (lastSelectedCoordinate.equals(old)) {Thread.sleep(200); System.out.println("c"); }
+    			if (playerOneGrid.addShip(choice, new Ship(ships[i]), lastSelectedCoordinate.getX(), lastSelectedCoordinate.getY()))
     			{
     				updateAllGrids(1);
     				done = true;
     			}
     			old = lastSelectedCoordinate;
-                System.out.println("d");
     		}
     	}
     	
