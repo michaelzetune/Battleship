@@ -1,9 +1,3 @@
-/*
- * Michael Zetune, Brett Mendenhall
- * 3/31/16
- * Gallatin 2nd
- */
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -66,7 +60,7 @@ public class WelcomeMenu implements ActionListener {
      * actionPerformed reads in an actionEvent by the user to determine what happens next
      * @param e the action performed
      */
-    public void actionPerformed(ActionEvent e)
+    public void actionPerformed(ActionEvent e) //throws InterruptedException
     {
 		JButton source = (JButton) e.getSource();
 		switch (source.getText())

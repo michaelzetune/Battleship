@@ -1,10 +1,3 @@
-/*
- * Michael Zetune, Brett Mendenhall
- * 3/31/16
- * Gallatin 2nd
- */
-
-
 public class GameRunner {
  
 

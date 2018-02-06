@@ -1,9 +1,3 @@
-/*
- * Michael Zetune, Brett Mendenhall
- * 3/31/16
- * Gallatin 2nd
- */
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -41,7 +35,7 @@ public class Battleship extends JFrame implements ActionListener {
 	/**
 	 * constructs a Battleship with GUI elements
 	 */
-    public Battleship() 
+    public Battleship() throws InterruptedException
     {
 	     playerOneWindow = new JFrame();
 	     playerTwoWindow = new JFrame();
@@ -187,7 +181,7 @@ public class Battleship extends JFrame implements ActionListener {
      * turn determines whose turn it is in order to allow that player an attack
      * @param i the player whose turn it currently is 
      */
-    public void turn(int i)
+    public void turn(int i) throws InterruptedException
     {
     	OceanGrid.Location temp = null;
     	Coord attackSpot = null;
@@ -198,8 +192,8 @@ public class Battleship extends JFrame implements ActionListener {
     		while (temp == null || temp.equals(OceanGrid.Location.ATTACKEDSHIP) || temp.equals(OceanGrid.Location.ATTACKEDWATER))
     		{
     			Coord old = lastSelectedCoordinate;
-		    	JOptionPane.showMessageDialog(playerOneWindow, "Choose a valid location to attack.");
-		    	while(old.equals(lastSelectedCoordinate)){}
+		    	JOptionPane.showMessageDialog(playerOneWindow, "Choose a valid location to attack on the top grid.");
+		    	while(old.equals(lastSelectedCoordinate)){ Thread.sleep(200); System.out.print("waiting"); }
 		    	attackSpot = lastSelectedCoordinate;
 		    	temp = playerTwoGrid.attack(attackSpot.getX(), attackSpot.getY());
     		}
@@ -232,7 +226,7 @@ public class Battleship extends JFrame implements ActionListener {
     		{
     			Coord old = lastSelectedCoordinate;
 		    	JOptionPane.showMessageDialog(playerTwoWindow, "Choose a valid location to attack.");
-		    	while(old.equals(lastSelectedCoordinate)){}
+		    	while(old.equals(lastSelectedCoordinate)){ Thread.sleep(200); System.out.print("waiting"); }
 		    	attackSpot = lastSelectedCoordinate;
 		    	temp = playerOneGrid.attack(attackSpot.getX(), attackSpot.getY());
     		}
@@ -275,7 +269,9 @@ public class Battleship extends JFrame implements ActionListener {
     		playerOneOpponentPanel.setVisible(true);	
     		scrollBarPOne.setVisible(true);
     		scrollBarPTwo.setVisible(false);
-    		textAreaPOne.setText(turnList.toString().substring(1,turnList.toString().length()-1)); 
+            String text = turnList.toString().substring(1,turnList.toString().length()-1);
+            text.replaceAll("\n, ", "\n");
+    		textAreaPOne.setText(text); 
 
     	}
     	if (i == 2) // show p2 and hide p1
@@ -286,7 +282,9 @@ public class Battleship extends JFrame implements ActionListener {
     		playerTwoOpponentPanel.setVisible(true);
     		scrollBarPOne.setVisible(false);
     		scrollBarPTwo.setVisible(true);
-    		textAreaPTwo.setText(turnList.toString().substring(1,turnList.toString().length()-1)); 
+    		String text = turnList.toString().substring(1,turnList.toString().length()-1);
+            text.replaceAll("\n, ", "\n");
+            textAreaPOne.setText(text);  
     	}
     	if (i == 3) // hide everything
     	{
@@ -446,10 +444,11 @@ public class Battleship extends JFrame implements ActionListener {
      */
     public void actionPerformed(ActionEvent e)
     {
-        System.out.println("new coordinate selected");
+        System.out.print("new coordinate selected: ");
         readyToContinueSetup = true;
      	JButton source = (JButton) e.getSource();
      	lastSelectedCoordinate = new Coord(source.getToolTipText());
+        System.out.println("" + lastSelectedCoordinate.getX() + lastSelectedCoordinate.getY());
     }
 
     

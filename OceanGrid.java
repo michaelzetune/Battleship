@@ -1,9 +1,3 @@
-/*
- * Michael Zetune, Brett Mendenhall
- * 3/31/16
- * Gallatin 2nd
- */
-
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -150,7 +144,7 @@ public class OceanGrid
 	 			switch (ocean[a][b])
 	 			{
 	 				case SHIP:
-	 					temp.setBackground(Color.darkGray);
+	 					temp.setBackground(Color.black);
 	 					temp.setOpaque(true);
 	 					break;
 	 				case WATER:
@@ -162,7 +156,7 @@ public class OceanGrid
 	 					temp.setOpaque(true);
 	 					break;
 	 				case ATTACKEDWATER:
-	 					temp.setBackground(Color.white);
+	 					temp.setBackground(Color.gray);
 	 					temp.setOpaque(true);
 	 					break;
 	 			}
@@ -187,15 +181,19 @@ public class OceanGrid
 	 			{
 	 				case SHIP:
 	 					temp.setBackground(Color.blue);
+	 					temp.setOpaque(true);
 	 					break;
 	 				case WATER:
 	 					temp.setBackground(Color.blue);
+	 					temp.setOpaque(true);
 	 					break;
 	 				case ATTACKEDSHIP:
 	 					temp.setBackground(Color.red);
+	 					temp.setOpaque(true);
 	 					break;
 	 				case ATTACKEDWATER:
-	 					temp.setBackground(Color.white);
+	 					temp.setBackground(Color.lightGray);
+	 					temp.setOpaque(true);
 	 					break;
 	 			}
 	 			ret[a][b] = temp;
