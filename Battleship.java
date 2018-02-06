@@ -270,8 +270,9 @@ public class Battleship extends JFrame implements ActionListener {
     		scrollBarPOne.setVisible(true);
     		scrollBarPTwo.setVisible(false);
             String text = turnList.toString().substring(1,turnList.toString().length()-1);
-            text.replaceAll("\n, ", "\n");
-    		textAreaPOne.setText(text); 
+            String newText = text.replaceAll("\n, ", "\n");
+            System.out.println("TEXT: \n" + newText);
+    		textAreaPOne.setText(newText); 
 
     	}
     	if (i == 2) // show p2 and hide p1
@@ -283,8 +284,9 @@ public class Battleship extends JFrame implements ActionListener {
     		scrollBarPOne.setVisible(false);
     		scrollBarPTwo.setVisible(true);
     		String text = turnList.toString().substring(1,turnList.toString().length()-1);
-            text.replaceAll("\n, ", "\n");
-            textAreaPOne.setText(text);  
+            String newText = text.replaceAll("\n, ", "\n");
+            System.out.println("TEXT: \n" + newText);
+            textAreaPOne.setText(newText); 
     	}
     	if (i == 3) // hide everything
     	{
